@@ -1,4 +1,4 @@
-.boss-container { display: flex; flex-direction: column; align-items: center; margin-top: 10px; margin-bottom: 20px; min-height: 250px; width: 100%; justify-content: center; animation: float 3s ease-in-out infinite; }
+.boss-container { display: flex; flex-direction: column; align-items: center; margin-top: 50px; margin-bottom: 20px; min-height: 250px; width: 100%; justify-content: center; animation: float 3s ease-in-out infinite; }
 .monster { width: 130px; height: 130px; border-radius: 50% 50% 30% 30%; position: relative; border: 6px solid white; transition: all 0.5s ease; }
 
 /* Gözlerin Genel Yapısı */
