@@ -1,0 +1,88 @@
+.trophy-container {
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #333;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.trophy-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trophy-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 5px;
+  z-index: 2;
+}
+
+.trophy-name {
+  font-family: 'Pixel', Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Kupa Tipleri */
+.trophy-old { 
+  color: #5d4037; 
+  border-color: #3e2723;
+  filter: sepia(1) saturate(0.5) contrast(0.8); /* Pis/Eski görünüm */
+}
+
+.trophy-wood { color: #deb887; border-color: #8b4513; }
+.trophy-bronze { color: #cd7f32; border-color: #8b4513; }
+.trophy-gold { 
+  color: #ffd700; 
+  border-color: #b8860b; 
+  animation: shine 2s infinite; 
+}
+
+/* Elmas Kupa: Pembe-Mavi Karışımı ve Kanatlar */
+.trophy-diamond { 
+  border-color: #ff69b4; 
+  animation: diamond-float 2s infinite ease-in-out;
+}
+
+.diamond-gradient-icon {
+  fill: url(#diamond-grad);
+  filter: drop-shadow(0 0 10px #ff69b4) drop-shadow(0 0 20px #00bfff);
+}
+
+.wings {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  z-index: 1;
+  opacity: 0.8;
+  animation: wing-flap 2s infinite ease-in-out;
+}
+
+@keyframes diamond-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes wing-flap {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.2); }
+}
+
+@keyframes shine {
+  0% { filter: drop-shadow(0 0 2px #ffd700); }
+  50% { filter: drop-shadow(0 0 10px #ffd700); }
+  100% { filter: drop-shadow(0 0 2px #ffd700); }
+}

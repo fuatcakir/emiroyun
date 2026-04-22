@@ -1,0 +1,51 @@
+.boss-container { display: flex; flex-direction: column; align-items: center; margin-top: 10px; margin-bottom: 20px; min-height: 250px; width: 100%; justify-content: center; animation: float 3s ease-in-out infinite; }
+.monster { width: 130px; height: 130px; border-radius: 50% 50% 30% 30%; position: relative; border: 6px solid white; transition: all 0.5s ease; }
+
+/* Gözlerin Genel Yapısı */
+.eye {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  top: 35px;
+  z-index: 10;
+}
+.eye::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+}
+.left-eye { left: 25px; }
+.right-eye { right: 25px; }
+
+/* Boss Tipleri */
+.boss-devil { background: #ff0000; box-shadow: 0 0 40px #ff0000; }
+.boss-tiger { background: #ff8800; box-shadow: 0 0 40px #ff8800; }
+.boss-robot { background: #78909c; box-shadow: 0 0 40px #78909c; }
+.boss-dragon { background: #2e7d32; box-shadow: 0 0 40px #2e7d32; }
+.boss-alien { background: #7e57c2; box-shadow: 0 0 40px #7e57c2; }
+
+/* Ekstra Özellikler */
+.horns-large::before, .horns-large::after { content: ''; position: absolute; top: -35px; width: 20px; height: 40px; background: #aa0000; border: 4px solid white; }
+.horns-large::before { left: 20px; transform: rotate(-35deg); border-radius: 20px 0 0 0; }
+.horns-large::after { right: 20px; transform: rotate(35deg); border-radius: 0 20px 0 0; }
+
+.tiger-ears::before, .tiger-ears::after { content: ''; position: absolute; top: -15px; width: 30px; height: 30px; background: #ff8800; border: 4px solid white; border-radius: 50% 50% 0 0; }
+.tiger-ears::before { left: 10px; } .tiger-ears::after { right: 10px; }
+
+.eye-visor { position: absolute; top: 35px; left: 10px; width: 110px; height: 25px; background: rgba(0, 229, 255, 0.4); border: 2px solid white; z-index: 5; }
+
+.hp-bar-container { width: 100%; height: 18px; background: #222; border: 2px solid #666; border-radius: 9px; overflow: hidden; }
+.hp-bar { height: 100%; background: linear-gradient(90deg, #ff0055, #ff66aa); transition: width 0.3s; }
+.boss-info { color: white; font-weight: bold; margin-bottom: 10px; }
+.victory-text { font-size: 2.5rem; color: #00ff88; text-shadow: 0 0 20px #00ff88; animation: zoom 0.5s infinite; }
+@keyframes zoom { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0); } }
+.boss-damaged { animation: shake 0.1s infinite; filter: brightness(1.5); }
+@keyframes shake { 0% { transform: translate(1px, 1px); } 100% { transform: translate(-1px, -1px); } }

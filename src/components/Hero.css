@@ -1,0 +1,44 @@
+.hero-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; position: relative; width: 100%; }
+.hero-info { width: 100%; text-align: center; color: #ffd700; font-weight: bold; margin-bottom: 10px; }
+.energy-bar-container { width: 100%; height: 12px; background: #222; border: 2px solid #ffd700; border-radius: 6px; overflow: hidden; }
+.energy-bar { height: 100%; background: linear-gradient(90deg, #ffd700, #ffffff); box-shadow: 0 0 10px #ffd700; transition: width 0.3s; }
+
+/* Kombo Stilleri */
+.combo-container { width: 100%; height: 10px; background: #111; border: 1px solid #ff8800; border-radius: 5px; margin-top: 5px; position: relative; overflow: hidden; }
+.combo-bar { height: 100%; background: linear-gradient(90deg, #ff8800, #ffcc00); box-shadow: 0 0 10px #ff8800; transition: width 0.1s linear; }
+.combo-text { position: absolute; top: 0; width: 100%; font-size: 0.5rem; color: white; text-align: center; line-height: 10px; font-weight: bold; }
+
+.fury-mode { animation: fury-shake 0.1s infinite; }
+@keyframes fury-shake { 0% { transform: translate(1px, 1px); } 100% { transform: translate(-1px, -1px); } }
+
+.fury-flames { position: absolute; top: -20px; left: -10px; width: 100px; height: 120px; background: radial-gradient(circle, rgba(255,136,0,0.4) 0%, transparent 70%); animation: flames 0.5s infinite alternate; z-index: -1; }
+@keyframes flames { from { transform: scale(1); opacity: 0.5; } to { transform: scale(1.2); opacity: 0.8; } }
+
+.fury-text { position: absolute; top: -30px; color: #ff4400; font-weight: 900; font-size: 1.2rem; text-shadow: 0 0 10px #ff4400; animation: bounce 0.3s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+.hero-body { width: 80px; height: 100px; position: relative; animation: h-float 4s ease-in-out infinite; border-radius: 10px; z-index: 5; }
+.hero-eyes { position: absolute; top: 20px; left: 15px; width: 50px; z-index: 20; }
+.h-eye { position: absolute; width: 12px; height: 12px; background: white; border-radius: 50%; }
+.h-eye::after { content: ''; position: absolute; width: 6px; height: 6px; background: black; border-radius: 50%; top: 3px; left: 3px; }
+.hero-eyes .left-eye { left: 0; } .hero-eyes .right-eye { right: 0; }
+
+.hero-angel { background: #e0f7fa; border: 3px solid white; box-shadow: 0 0 20px #e0f7fa; }
+.hero-samurai { background: #d32f2f; border: 3px solid white; box-shadow: 0 0 20px #d32f2f; }
+.hero-cyber-knight { background: #00e5ff; border: 3px solid #fff; box-shadow: 0 0 30px #00e5ff; }
+
+.halo { width: 30px; height: 8px; border: 2px solid gold; border-radius: 50%; position: absolute; top: -15px; left: 25px; box-shadow: 0 0 10px gold; }
+.wing { width: 40px; height: 60px; background: rgba(255,255,255,0.8); border: 2px solid #eee; position: absolute; top: 0; z-index: -1; }
+.left-wing { left: -30px; border-radius: 50px 0 0 50px; transform-origin: right; animation: flapL 2s infinite; }
+.right-wing { right: -30px; border-radius: 0 50px 50px 0; transform-origin: left; animation: flapR 2s infinite; }
+
+.katana { position: absolute; right: -25px; top: 20px; width: 6px; height: 70px; background: silver; border: 1px solid black; transform: rotate(15deg); }
+.samurai-mask { position: absolute; bottom: 10px; width: 100%; height: 30px; background: rgba(0,0,0,0.5); }
+.neon-sword { position: absolute; left: -20px; bottom: 10px; width: 8px; height: 80px; background: #fff; box-shadow: 0 0 20px #fff; border-radius: 4px; animation: glowS 1s infinite alternate; }
+
+@keyframes flapL { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-20deg); } }
+@keyframes flapR { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(20deg); } }
+@keyframes glowS { from { filter: brightness(1); } to { filter: brightness(1.5); } }
+@keyframes h-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.hero-attack { animation: divine-charge 0.4s ease-out; }
+@keyframes divine-charge { 0% { transform: scale(1); } 50% { transform: scale(1.2) translateY(-20px); } 100% { transform: scale(1); } }
