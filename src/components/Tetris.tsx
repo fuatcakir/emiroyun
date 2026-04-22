@@ -50,7 +50,7 @@ const Tetris: React.FC = () => {
     }
   }, [score, highScore]);
   const [bossHp, maxBossHp, isBossDamaged, bossLevel, bossVictory] = useBoss(rowsCleared, manualDamage);
-  const [heroEnergy, isHeroAttacking, powerType, comboGauge, isFuryMode, triggerMiniPower, useSpecialAttack] = useHero(rowsCleared);
+  const [heroEnergy, isHeroAttacking, _powerType, comboGauge, isFuryMode, triggerMiniPower, useSpecialAttack] = useHero(rowsCleared);
 
   const handleUltiChoice = (choice: boolean) => {
     if (choice) {
