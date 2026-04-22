@@ -209,7 +209,6 @@ const Tetris: React.FC = () => {
       )}
       <div className="tetris">
         <aside className="left-aside">
-          <Boss hp={bossHp} maxHp={maxBossHp} isDamaged={isBossDamaged} level={bossLevel} victory={bossVictory} />
           <Display text="HOLD" />
           <div className="hold-box">
             {holdPiece && TETROMINOES[holdPiece as keyof typeof TETROMINOES].shape.map((row: any[], y: number) => (
@@ -223,6 +222,8 @@ const Tetris: React.FC = () => {
               </div>
             ))}
           </div>
+          <Boss hp={bossHp} maxHp={maxBossHp} isDamaged={isBossDamaged} level={bossLevel} victory={bossVictory} />
+          <Hero energy={heroEnergy} isAttacking={isHeroAttacking} level={level} comboGauge={comboGauge} isFuryMode={isFuryMode} />
         </aside>
 
         <Stage stage={stage} />
@@ -235,7 +236,6 @@ const Tetris: React.FC = () => {
             </div>
           ) : (
             <div>
-              <Hero energy={heroEnergy} isAttacking={isHeroAttacking} level={level} comboGauge={comboGauge} isFuryMode={isFuryMode} />
               <Display text="SIRADAKİ" />
               <div className="hold-box next-box">
                 {nextPiece.shape.map((row: any[], y: number) => (
