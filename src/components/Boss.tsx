@@ -7,15 +7,17 @@ interface BossProps {
   isDamaged: boolean;
   level: number;
   victory: boolean;
+  isAttacking?: boolean;
 }
 
-const Boss: React.FC<BossProps> = ({ hp, maxHp, isDamaged, level, victory }) => {
+const Boss: React.FC<BossProps> = ({ hp, maxHp, isDamaged, level, victory, isAttacking }) => {
   const hpPercentage = (hp / maxHp) * 100;
   const types = ['devil', 'tiger', 'robot', 'dragon', 'alien'];
   const bossType = types[(level - 1) % types.length];
 
   return (
     <div className={`boss-container ${isDamaged ? 'boss-damaged' : ''} ${victory ? 'boss-victory' : ''}`}>
+      {isAttacking && <div className="boss-beam"></div>}
       {victory && <div className="victory-text">YENİLDİ!</div>}
       
       {!victory && (

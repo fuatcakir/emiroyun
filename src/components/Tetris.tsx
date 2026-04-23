@@ -222,7 +222,14 @@ const Tetris: React.FC = () => {
               </div>
             ))}
           </div>
-          <Boss hp={bossHp} maxHp={maxBossHp} isDamaged={isBossDamaged} level={bossLevel} victory={bossVictory} />
+          <Boss 
+            hp={bossHp} 
+            maxHp={maxBossHp} 
+            isDamaged={isBossDamaged} 
+            level={bossLevel} 
+            victory={bossVictory} 
+            isAttacking={gameOver}
+          />
           <Hero energy={heroEnergy} isAttacking={isHeroAttacking} level={level} comboGauge={comboGauge} isFuryMode={isFuryMode} />
         </aside>
 
