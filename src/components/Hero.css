@@ -1,4 +1,33 @@
 .hero-container { display: flex; flex-direction: column; align-items: center; margin-top: 10px; margin-bottom: 20px; position: relative; width: 100%; }
+
+/* Işın Efekti */
+.divine-beam {
+  position: absolute;
+  bottom: 50px; /* Hero'nun olduğu yerden başlasın */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 500px; /* Yukarıdaki Boss'a kadar uzansın */
+  background: linear-gradient(to top, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 20%,
+    rgba(255, 215, 0, 0.9) 50%,
+    rgba(255, 255, 255, 0.9) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  box-shadow: 0 0 30px #ffd700, 0 0 60px #fff;
+  z-index: 100;
+  animation: beam-fire 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes beam-fire {
+  0% { height: 0; opacity: 1; width: 5px; }
+  20% { height: 500px; opacity: 1; width: 30px; }
+  80% { opacity: 0.8; width: 20px; }
+  100% { opacity: 0; width: 0; }
+}
+
 .hero-info { width: 100%; text-align: center; color: #ffd700; font-weight: bold; margin-bottom: 10px; }
 .energy-bar-container { width: 100%; height: 12px; background: #222; border: 2px solid #ffd700; border-radius: 6px; overflow: hidden; }
 .energy-bar { height: 100%; background: linear-gradient(90deg, #ffd700, #ffffff); box-shadow: 0 0 10px #ffd700; transition: width 0.3s; }

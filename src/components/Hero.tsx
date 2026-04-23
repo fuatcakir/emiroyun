@@ -16,6 +16,7 @@ const Hero: React.FC<HeroProps> = ({ energy, isAttacking, level, comboGauge, isF
 
   return (
     <div className={`hero-container ${isAttacking ? 'hero-attack' : ''} ${isFuryMode ? 'fury-mode' : ''}`}>
+      {isAttacking && <div className="divine-beam"></div>}
       <div className="hero-info">
         <span className="hero-name">{(heroType || 'angel').toUpperCase()}</span>
         <div className="energy-bar-container">
